@@ -1,0 +1,35 @@
+// Base
+@import "base/reset"; 
+@import "base/typography"; 
+
+// Components
+@import "Components/buttons";
+@import "Components/carousel";
+@import "Components/cover";
+@import "Components/dropdown";
+
+// Layout
+@import "layout/navigation";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/forms";
+
+// Pages
+@import "pages/home";
+@import "pages/contact";
+
+// themes
+@import "themes/theme";
+@import "themes/admin";
+
+// utils
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/helpers";
+
+// vendors
+@import "vendors/bootstrap";
+@import "vendors/jquery-ui";

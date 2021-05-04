@@ -2,9 +2,10 @@
   "name": "personalblog",
   "version": "1.0.0",
   "description": "Simple personal blog",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/abdelazizbardich/Blog-Personnel/issues"
   },
-  "homepage": "https://github.com/abdelazizbardich/Blog-Personnel#readme"
+  "homepage": "https://github.com/abdelazizbardich/Blog-Personnel#readme",
+  "devDependencies": {
+    "sass": "^1.32.12"
+  }
 }
