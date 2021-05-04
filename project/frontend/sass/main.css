@@ -10580,54 +10580,71 @@ small, .text_small {
   padding: 8px 16px;
   border-radius: 5px;
   border: 1px solid;
+  margin: 0px 8px;
 }
 
 .btn-primary {
   color: #ffffff;
   background-color: #1976D2;
   border-color: #1976D2;
+  -webkit-box-shadow: rgba(25, 118, 210, 0.5) 0px 3px 8px;
+          box-shadow: rgba(25, 118, 210, 0.5) 0px 3px 8px;
 }
 
 .btn-success {
   color: #ffffff;
   background-color: #28a745;
   border-color: #28a745;
+  -webkit-box-shadow: rgba(40, 167, 69, 0.5) 0px 3px 8px;
+          box-shadow: rgba(40, 167, 69, 0.5) 0px 3px 8px;
 }
 
 .btn-info {
   color: #ffffff;
   background-color: #17a2b8;
   border-color: #17a2b8;
+  -webkit-box-shadow: rgba(23, 162, 184, 0.5) 0px 3px 8px;
+          box-shadow: rgba(23, 162, 184, 0.5) 0px 3px 8px;
 }
 
 .btn-warning {
   color: #ffffff;
   background-color: #ffc107;
   border-color: #ffc107;
+  -webkit-box-shadow: rgba(255, 193, 7, 0.5) 0px 3px 8px;
+          box-shadow: rgba(255, 193, 7, 0.5) 0px 3px 8px;
 }
 
 .btn-danger {
   color: #ffffff;
   background-color: #FF4081;
   border-color: #FF4081;
+  -webkit-box-shadow: rgba(255, 64, 129, 0.5) 0px 3px 8px;
+          box-shadow: rgba(255, 64, 129, 0.5) 0px 3px 8px;
 }
 
 .btn-secondary {
   color: #ffffff;
   background-color: #6c757d;
   border-color: #6c757d;
+  -webkit-box-shadow: rgba(108, 117, 125, 0.5) 0px 3px 8px;
+          box-shadow: rgba(108, 117, 125, 0.5) 0px 3px 8px;
 }
 
 .btn-dark {
   color: #ffffff;
   background-color: #343a40;
   border-color: #343a40;
+  -webkit-box-shadow: rgba(52, 58, 64, 0.5) 0px 3px 8px;
+          box-shadow: rgba(52, 58, 64, 0.5) 0px 3px 8px;
 }
 
 .btn-light {
   color: #ffffff;
   background-color: #343a40;
   border-color: #343a40;
+  -webkit-box-shadow: rgba(52, 58, 64, 0.5) 0px 3px 8px;
+          box-shadow: rgba(52, 58, 64, 0.5) 0px 3px 8px;
 }
 
 .statistics__card {
@@ -10677,6 +10694,46 @@ small, .text_small {
           box-shadow: rgba(52, 58, 64, 0.5) 0px 3px 8px;
 }
 
+.card {
+  border-radius: 15px;
+  -webkit-box-shadow: rgba(25, 118, 210, 0.2) 0px 8px 16px;
+          box-shadow: rgba(25, 118, 210, 0.2) 0px 8px 16px;
+  padding: 16px;
+  margin: 32px 0px;
+  border: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+.card__title h2 {
+  margin: 0;
+}
+
+.card table {
+  font-size: .8rem;
+}
+
+.card table th {
+  padding: 8px;
+  font-weight: bold;
+  color: rgba(52, 58, 64, 0.9);
+}
+
+.card table thead {
+  border-bottom: 1px solid rgba(52, 58, 64, 0.2);
+}
+
+.card table td {
+  padding: 8px;
+  color: rgba(52, 58, 64, 0.7);
+}
+
+.card table tr {
+  border-bottom: 1px solid rgba(52, 58, 64, 0.2);
+}
+
+.card table tr:last-child {
+  border: none;
+}
+
 .header {
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px;
           box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px;
@@ -10695,5 +10752,32 @@ small, .text_small {
 
 .header__title {
   margin: 32px 0px;
+}
+
+.form-control {
+  border-color: rgba(25, 118, 210, 0.5);
+  color: #1976D2;
+  padding: 8px 8px;
+  font-size: 2rem;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: rgba(25, 118, 210, 0.3);
+  font-size: 1rem;
+}
+
+.form-control:-ms-input-placeholder {
+  color: rgba(25, 118, 210, 0.3);
+  font-size: 1rem;
+}
+
+.form-control::-ms-input-placeholder {
+  color: rgba(25, 118, 210, 0.3);
+  font-size: 1rem;
+}
+
+.form-control::placeholder {
+  color: rgba(25, 118, 210, 0.3);
+  font-size: 1rem;
 }
 /*# sourceMappingURL=main.css.map */

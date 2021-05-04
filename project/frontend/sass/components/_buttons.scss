@@ -2,44 +2,53 @@
     padding: 8px 16px;
     border-radius: 5px;
     border:1px solid;
+    margin: 0px 8px;
     &-primary{
         color: $color-white;
         background-color: $color-primary;
         border-color: $color-primary;
+        box-shadow: rgba($color-primary,.5) 0px 3px 8px;
     }
     &-success{
         color: $color-white;
         background-color: $color-success;
         border-color: $color-success;
+        box-shadow: rgba($color-success,.5) 0px 3px 8px;
     }
     &-info{
         color: $color-white;
         background-color: $color-info;
         border-color: $color-info;
+        box-shadow: rgba($color-info, .5) 0px 3px 8px;
     }
     &-warning{
         color: $color-white;
         background-color: $color-warning;
         border-color: $color-warning;
+        box-shadow: rgba($color-warning,.5) 0px 3px 8px;
     }
     &-danger{
         color: $color-white;
         background-color: $color-danger;
         border-color: $color-danger;
+        box-shadow: rgba($color-danger,.5) 0px 3px 8px;
     }
     &-secondary{
         color: $color-white;
         background-color: $color-secondary;
         border-color: $color-secondary;
+        box-shadow: rgba($color-secondary,.5) 0px 3px 8px;
     }
     &-dark{
         color: $color-white;
         background-color: $color-dark;
         border-color: $color-dark;
+        box-shadow: rgba($color-dark,.5) 0px 3px 8px;
     }
     &-light{
         color: $color-white;
         background-color: $color-light;
         border-color: $color-light;
+        box-shadow: rgba($color-light, .5) 0px 3px 8px;
     }
 }
