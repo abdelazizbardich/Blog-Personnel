@@ -2,9 +2,12 @@
     border-color: rgba($color-primary, .5);
     color: $color-primary;
     padding: 8px 8px;
-    font-size: 2rem;
+    font-size: 1rem;
     &::placeholder{
         color: rgba($color-primary, .3);
         font-size: 1rem;
     }
+}
+textarea{
+    min-height: 250px;
 }
