@@ -1,3 +1,13 @@
+// vendors
+@import "vendors/bootstrap";
+
+// utils
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/helpers";
+
+
 // Base
 @import "base/reset"; 
 @import "base/typography"; 
@@ -7,6 +17,7 @@
 @import "Components/carousel";
 @import "Components/cover";
 @import "Components/dropdown";
+@import "Components/statistics";
 
 // Layout
 @import "layout/navigation";
@@ -23,13 +34,3 @@
 // themes
 @import "themes/theme";
 @import "themes/admin";
-
-// utils
-@import "utils/variables";
-@import "utils/functions";
-@import "utils/mixins";
-@import "utils/helpers";
-
-// vendors
-@import "vendors/bootstrap";
-@import "vendors/jquery-ui";

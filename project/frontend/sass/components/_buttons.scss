@@ -1,0 +1,45 @@
+.btn{
+    padding: 8px 16px;
+    border-radius: 5px;
+    border:1px solid;
+    &-primary{
+        color: $color-white;
+        background-color: $color-primary;
+        border-color: $color-primary;
+    }
+    &-success{
+        color: $color-white;
+        background-color: $color-success;
+        border-color: $color-success;
+    }
+    &-info{
+        color: $color-white;
+        background-color: $color-info;
+        border-color: $color-info;
+    }
+    &-warning{
+        color: $color-white;
+        background-color: $color-warning;
+        border-color: $color-warning;
+    }
+    &-danger{
+        color: $color-white;
+        background-color: $color-danger;
+        border-color: $color-danger;
+    }
+    &-secondary{
+        color: $color-white;
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+    }
+    &-dark{
+        color: $color-white;
+        background-color: $color-dark;
+        border-color: $color-dark;
+    }
+    &-light{
+        color: $color-white;
+        background-color: $color-light;
+        border-color: $color-light;
+    }
+}
