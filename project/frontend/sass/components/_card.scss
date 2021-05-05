@@ -1,0 +1,35 @@
+.card{
+    border-radius: 15px;
+    box-shadow: rgba($color-primary,.2) 0px 8px 16px;
+    padding: 16px;
+    // margin: 32px 0px;
+    margin-bottom: 32px;
+    border: 1px solid rgba($color-primary,.1);
+    &__title{
+        h2{
+            margin: 0;
+        }
+    }
+
+    table{
+        th {
+            padding: 8px;
+            font-weight: bold;
+            color: rgba($color-dark,.9);
+        }
+        thead{
+            border-bottom: 1px solid rgba($color-dark,.2);
+        }
+        td {
+            padding: 8px;
+            color: rgba($color-dark,.7);
+        }
+        tr{
+            border-bottom: 1px solid rgba($color-dark,.2);
+            &:last-child{
+                border: none;
+            }
+        }
+        font-size: .8rem;
+    }
+}

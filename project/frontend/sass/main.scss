@@ -1,0 +1,40 @@
+// vendors
+@import "vendors/bootstrap";
+
+// utils
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/helpers";
+
+
+// Base
+@import "base/reset"; 
+@import "base/typography"; 
+
+// Components
+@import "Components/buttons";
+@import "Components/carousel";
+@import "Components/cover";
+@import "Components/dropdown";
+@import "Components/statistics";
+@import "Components/card";
+@import "Components/text-editor";
+
+// Layout
+@import "layout/navigation";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/forms";
+@import "layout/alert";
+@import "layout/content";
+
+// Pages
+@import "pages/home";
+@import "pages/contact";
+
+// themes
+@import "themes/theme";
+@import "themes/admin";

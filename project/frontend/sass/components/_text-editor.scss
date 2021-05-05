@@ -1,0 +1,46 @@
+.editor{
+    .note-editor.note-airframe, .note-editor.note-frame{
+        border: 1px solid rgba($color-primary,0.4) !important;
+        border-radius: 5px;
+        padding: 1px;
+        box-shadow: none ;
+    }
+    .note-toolbar.card-header {
+        background-color: unset;
+        border-bottom: 1px solid rgba($color-primary,0.4) !important;
+    }
+    button.note-btn {
+        background: none;
+        color: $color-primary;
+        box-shadow: none;
+        border: none;
+    }
+    .note-resizebar {
+        border-top: 1px solid rgba($color-primary,0.4) !important;
+        background: $color-white;
+    }
+    .note-statusbar {
+        border: none !important;
+    }
+    .dropdown-menu > li > a {
+        display: block;
+         padding: 3px 20px;
+         clear: both;
+         font-weight: normal;
+         line-height: 1.42857143;
+         color: #333;
+         white-space: nowrap;
+    }
+    .dropdown-toggle[aria-expanded="true"] ~ .dropdown-menu{
+        display: block;
+    }
+    .note-editor.note-frame .note-editing-area .note-editable b { 
+        font-weight: bold !important; 
+    }
+    b, strong { 
+        font-weight: 500; 
+    }
+    u{
+        text-decoration: underline;
+    }
+}
