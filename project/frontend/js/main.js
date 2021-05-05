@@ -1,4 +1,3 @@
-
 $(".deleteArticle").click(function () {
     Swal.fire({
         title: 'Êtes-vous sûr de le faire!',
@@ -24,4 +23,10 @@ $(".filterTable").keyup(function () {
 });
 $(".setSlugName").keyup(function () {
     alert("qsdcsdv");
+});
+$(document).ready(function(){
+  $('#editor').summernote({
+    placeholder: '...',
+    height: 350,
+  });
 });
