@@ -19,10 +19,17 @@ $(".deleteArticle").click(function () {
       })
 });
 $(".filterTable").keyup(function () {
-    alert("qsdcsdv");
+    var value = $(this).val().toLowerCase();
+    $("table tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
 });
 $(".setSlugName").keyup(function () {
-    alert("qsdcsdv");
+    let title = $(this).val();
+    title = title.toLowerCase(title);
+    title = title.replaceAll(" ", "-");
+    title = title.trim();
+    $(".slug").val(title);
 });
 $(document).ready(function(){
   $('#editor').summernote({
