@@ -4,6 +4,6 @@
 // Routes
 
 
-Route::get('/',function(){
+Route::get('/api/home',function(){
     return Route::view("welcome");
 });

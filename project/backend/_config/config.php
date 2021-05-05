@@ -1,7 +1,7 @@
 <?php
 
-define("ABS_PATH","http://localhost/Template_MVC_Version1-master");
+define("ABS_PATH","http://localhost/Blog-Personnel/project/backend");
 define("HOST","localhost");
-define("DATABASE","ooptest");
+define("DATABASE","simpleblog");
 define("USER","root");
 define("PASSWORD","");
