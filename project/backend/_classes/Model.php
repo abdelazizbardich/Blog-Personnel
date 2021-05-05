@@ -63,7 +63,6 @@ class Model extends Database{
         $keys = "";
         $binds = "";
         foreach($datas as $key=>$data){
-
             if( !next( $datas ) ) {
                 $keys .= $key."";
                 $binds .= ":".$key;
@@ -71,20 +70,15 @@ class Model extends Database{
                 $keys .= $key.",";
                 $binds .= ":".$key.",";
             }
-
         }
-
         $query = "INSERT INTO $this->tableName ($keys) VALUES ($binds)";
-        // echo $query;
         $sql = $this->con->prepare($query);
 
         foreach($datas as $Name => &$Value){
             $sql->bindParam(':'.$Name, $Value, PDO::PARAM_STR);
         }
-
-        print_r($sql);
         if($sql->execute()){
-            return true;
+            return intval($this->con->lastInsertId());
         }else{
             return false;
         }

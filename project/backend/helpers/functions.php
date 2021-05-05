@@ -25,6 +25,9 @@ function CompareUrl(string $url,string $Route,string $method){
 }
 function fetshUrlRoute($url,$route){
     $url = explode('/',$url);
+    if(str_contains($url[0],"api") || str_contains($url[1],"api")){
+        header('content-type: application/json;');
+    }
     $route = explode('/',$route);
     if(count($url) !== count($route)){
         return array(
