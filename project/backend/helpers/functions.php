@@ -1,5 +1,5 @@
 <?php
-
+use Firebase\JWT\JWT;
 // Compare route with given url and method
 function CompareUrl(string $url,string $Route,string $method){
     if($url != '/'){$url = rtrim($url,"/");}
@@ -25,9 +25,6 @@ function CompareUrl(string $url,string $Route,string $method){
 }
 function fetshUrlRoute($url,$route){
     $url = explode('/',$url);
-    if(str_contains($url[0],"api") || str_contains($url[1],"api")){
-        header('content-type: application/json;');
-    }
     $route = explode('/',$route);
     if(count($url) !== count($route)){
         return array(
@@ -89,4 +86,18 @@ function url($url){
 // redirection
 function redirect($path){
     header('location: '.ABS_PATH.$path);
+}
+// generate token
+function generateToken($data){
+    $payload = $data;
+    $jwt = JWT::encode($payload, SECRET_KEY);
+    return $jwt;
+}
+function parceToken($token){
+    try {
+        $decoded = JWT::decode($token, SECRET_KEY, array('HS256'));
+        return $decoded;
+    } catch (\Throwable $th) {
+        return false;
+    }
 }

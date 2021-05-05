@@ -1,7 +1,6 @@
 <?php
 
 
-
-class Article extends Model{
+class Admin extends Model{
     public $tableName;
 }
