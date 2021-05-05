@@ -28,5 +28,6 @@ $(document).ready(function(){
   $('#editor').summernote({
     placeholder: '...',
     height: 350,
+    focus: true   
   });
 });
