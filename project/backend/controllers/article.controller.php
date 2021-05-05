@@ -4,7 +4,7 @@ require "./_classes/controller.php";
 require "./models/article.model.php";
 
 class articleController extends controller{
-    public function index($key){
+    public function add($key){
         if($key == "1234"){
             if(!empty($_POST['title']) || !empty($_POST['slug']) || !empty($_POST['content'])){
                 $model = new Article();
@@ -18,9 +18,9 @@ class articleController extends controller{
                         "state" => 200,
                         "msg" => "success",
                         "data" => [
-                            "title" => $_POST['title'],
-                            "slug" => $_POST['slug'],
-                            "content" => $_POST['content']
+                            // "title" => $_POST['title'],
+                            // "slug" => $_POST['slug'],
+                            // "content" => $_POST['content']
                         ]
                     ];
                 }else{
