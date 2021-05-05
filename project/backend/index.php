@@ -28,5 +28,9 @@ require_once './routes/api.route.php';
 // if no page found
 if($notFound){
     $controller = new controller();
-    $controller->view("404",array());
+    echo json_encode([
+        "state" => 404,
+        "msg" => "Not found!",
+        "data" => []
+    ]);
 }
