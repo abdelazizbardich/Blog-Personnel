@@ -42,4 +42,12 @@
                     // calling the controller
                     return Route::controller("admin","login");
                 });
-            // 
+                //
+        // statistics
+                Route::get('/api/statistics/get',function(){
+                    Route::middleware('auth');
+                    // calling the controller
+                    return Route::controller("statistics","get");
+                });
+
+        

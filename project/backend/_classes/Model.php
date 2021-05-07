@@ -61,11 +61,11 @@ class Model extends Database{
     public function findBy($key,$val){
         $this->tableName = get_called_class()."s";
         $sql = $this->con->prepare("SELECT * FROM $this->tableName WHERE $key=:val");
-        $sql->bindParam(":val",$val,PDO::PARAM_INT);
+        $sql->bindParam(":val",$val,PDO::PARAM_STR);
         if($sql->execute()){
             return $sql->fetch(PDO::FETCH_OBJ);
         }else{
-            return false;
+            return $this->con->errorInfo();
         }
     }
     // insert

@@ -11,7 +11,7 @@ class articleController extends controller{
                     "title" => $_POST['title'],
                     "slug" => $_POST['slug'],
                     "content" => $_POST['content'],
-                    "admin_id" => 1
+                    "admin_id" => $_SESSION['id']
                 ]);
                 if($insert && is_int($insert)){
                     $responce = [
@@ -35,7 +35,7 @@ class articleController extends controller{
                 $responce = [
                     "state" => 401,
                     "msg" => "permition denied!",
-                    "data" => []
+                    "data" => ["qcsdc" => $_POST]
                 ];
             }
         echo json_encode($responce);
@@ -75,13 +75,12 @@ class articleController extends controller{
     public function delete($id){
         if(!empty($id)){
             $model = new Article();
-            $insert = $model->delete($id);
-            if($insert){
+            $delete = $model->delete($id);
+            if($delete){
                 $responce = [
                     "state" => 200,
                     "msg" => "success",
-                    "data" => [
-                    ]
+                    "data" => []
                 ];
             }else{
                 $responce = [
@@ -135,7 +134,9 @@ class articleController extends controller{
     // get all
     public function get(){
         $model = new Article();
+        $comments = new Comment();
         $result = $model->get();
+        // $commentsCount = $comments->getCount();
         if($result){
             $responce = [
                 "state" => 200,

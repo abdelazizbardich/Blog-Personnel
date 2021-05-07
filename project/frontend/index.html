@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dasboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="./sass/main.scss">
+    <link rel="stylesheet" href="sass/main.scss">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-6 text-left">
-                    <h1 class="header__logo"><a href="./">Simple Blog</a></h1>
+                    <h1 class="header__logo"><a href="">Simple Blog</a></h1>
                 </div>
                 <div class="col-6 text-right">
-                    <a href="./login.html" class="btn btn-danger btn-stretch"><i class="fas fa-arrow-right"></i> Logout</a>
+                    <a href="login.html" class="btn btn-danger btn-stretch"><i class="fas fa-arrow-right"></i> Logout</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                         <div class="statistics">
                             <div class="statistics__card statistics__card--danger">
                                 <span>Total des commentaires:</span>
-                                <span>50</span>
+                                <span class="total-comments">0</span>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         <div class="statistics">
                             <div class="statistics__card statistics__card--primary">
                                 <span>Total des articles:</span>
-                                <span>780</span>
+                                <span class="total-articles">0</span>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                         <div class="statistics">
                             <div class="statistics__card statistics__card--dark">
                                 <span>Total des vues:</span>
-                                <span>65</span>
+                                <span class="total-views">0</span>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                     <div class="col-auto">
                                         <div class="list-inline d-flex align-items-center">
                                             <div class="list-inline-item"><input type="text" placeholder="Search..." class="filterTable form-control form-control-lg"></div>
-                                            <div class="list-inline-item"><a href="./add.html" class="btn btn-primary btn-lg"><i class="fa fa-newspaper"></i> Ajouter</a></div>
+                                            <div class="list-inline-item"><a href="add.html" class="btn btn-primary btn-lg"><i class="fa fa-newspaper"></i> Ajouter</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <!-- <tr>
                                         <td>1</td>
                                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
                                         <td>lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit</td>
@@ -98,11 +98,11 @@
                                         <td>0</td>
                                         <td>5</td>
                                         <td class="d-flex">
-                                            <a href="./single.html?id=1" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                                            <a href="./edit.html?id=1" class="btn btn-primary"><i class="fa fa-pen"></i></a>
+                                            <a href="single.html?id=1" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                                            <a href="edit.html?id=1" class="btn btn-primary"><i class="fa fa-pen"></i></a>
                                             <a class="btn btn-danger deleteArticle"><i class="fa fa-trash"></i></a>
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
@@ -114,6 +114,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="./js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
