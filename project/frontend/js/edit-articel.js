@@ -2,6 +2,17 @@ import axios from "axios"; axios.defaults;
 import {desAlert, getUrlParam} from "./functions";
 $(document).ready(function(){
     let postId = getUrlParam('id');
+    // get article 
+    axios.get('http://localhost/Blog-Personnel/project/backend/api/article/find/'+postId,{
+    headers: {'token': window.sessionStorage.getItem('token') }
+    }).then((response)=>{
+        if(response.data.state == 200){
+            console.log(response.data);
+            $('input[name="title"]').val(response.data.data.title);
+            $('input[name="slug"]').val(response.data.data.slug);
+            $('textarea[name="content"]').summernote('code', response.data.data.content);
+        }
+    });
     $("#edit").submit(function(e){
         e.preventDefault();
         let formData = $(this).serialize();

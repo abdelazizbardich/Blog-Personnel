@@ -1,6 +1,13 @@
 import axios from "axios"; axios.defaults;
 import {removeTableRow} from "./functions";
 $(document).ready(function(){
+    // Filter table
+    $(".filterTable").keyup(function() {
+        let value = $(this).val().toLowerCase();
+        $("table tbody").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
     // Fill tabel with articles
     axios.get("http://localhost/Blog-Personnel/project/backend/api/article/get",{
         headers:{
@@ -31,6 +38,7 @@ $(document).ready(function(){
                     }
                 }).then((response)=>{
                     removeTableRow(id);
+                    window.location.reload();
                 })
             });
         });
