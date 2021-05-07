@@ -26,7 +26,7 @@ class adminController extends controller{
                 }else{
                     $responce = [
                         "state" => 403,
-                        "msg" => "Access denied!",
+                        "msg" => "Access denied! Wrong password",
                         "data" => []
                     ];
                 }
@@ -34,7 +34,7 @@ class adminController extends controller{
                 $responce = [
                     "state" => 404,
                     "msg" => "No user found!",
-                    "data" => $admin
+                    "data" => []
                 ];
             }
         }else{

@@ -43,7 +43,7 @@ class articleController extends controller{
     public function update($id){
             if(!empty($_POST['title']) || !empty($_POST['slug']) || !empty($_POST['content'])){
                 $model = new Article();
-                $update = $model->uupdate($id,[
+                $update = $model->update($id,[
                     "title" => $_POST['title'],
                     "slug" => $_POST['slug'],
                     "content" => $_POST['content'],
@@ -134,7 +134,7 @@ class articleController extends controller{
     // get all
     public function get(){
         $model = new Article();
-        $comments = new Comment();
+        // $comments = new Comment();
         $result = $model->get();
         // $commentsCount = $comments->getCount();
         if($result){

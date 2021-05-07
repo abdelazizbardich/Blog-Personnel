@@ -20,12 +20,11 @@
     "url": "https://github.com/abdelazizbardich/Blog-Personnel/issues"
   },
   "homepage": "https://github.com/abdelazizbardich/Blog-Personnel#readme",
-  "devDependencies": {
-    "sass": "^1.32.12"
-  },
   "dependencies": {
     "axios": "^0.21.1",
-    "functions": "^1.0.9",
     "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "sass": "^1.32.12"
   }
 }

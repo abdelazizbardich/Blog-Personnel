@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./sass/main.scss">
+    <script src="./js/auth.js"></script>
 </head>
 <body>
     <header class="header">
@@ -17,7 +18,7 @@
                     <h1 class="header__logo"><a href="./">Simple Blog</a></h1>
                 </div>
                 <div class="col-6 text-right">
-                    <a href="./login.html" class="btn btn-danger btn-stretch"><i class="fas fa-arrow-right"></i> Logout</a>
+                    <a href="./login.html" id="logout" class="btn btn-danger btn-stretch"><i class="fas fa-arrow-right"></i> Logout</a>
                 </div>
             </div>
         </div>
@@ -40,12 +41,12 @@
                             <form action="" method="post" id="add">
                                 <div class="col-12">
                                     <div class="form-group">
-                                            <input type="text" placeholder="Title..." required maxlength="70" minlength="2" name="title" class="setSlugName form-control form-control-lg">
+                                            <input type="text" placeholder="Title..."  maxlength="70" minlength="2" name="title" class="setSlugName form-control form-control-lg">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                            <input type="text" placeholder="Slug..." required maxlength="70" minlength="2" name="slug" class="slug form-control form-control-lg">
+                                            <input type="text" readonly placeholder="Slug..." maxlength="70" minlength="2" name="slug" class="slug form-control form-control-lg">
                                     </div>
                                 </div>
                                 <div class="col-12">

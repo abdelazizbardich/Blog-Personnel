@@ -7,6 +7,7 @@
     <title>Dasboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="sass/main.scss">
+    <script src="./js/auth.js"></script>
 </head>
 <body>
     <header class="header">
@@ -16,7 +17,7 @@
                     <h1 class="header__logo"><a href="">Simple Blog</a></h1>
                 </div>
                 <div class="col-6 text-right">
-                    <a href="login.html" class="btn btn-danger btn-stretch"><i class="fas fa-arrow-right"></i> Logout</a>
+                    <a href="login.html" id="logout" class="btn btn-danger btn-stretch"><i class="fas fa-arrow-right"></i> Logout</a>
                 </div>
             </div>
         </div>
@@ -83,14 +84,14 @@
                                 <thead>
                                     <th>Id</th>
                                     <th>Title</th>
-                                    <th>Slug</th>
+                                    <!-- <th>Slug</th> -->
                                     <th>Content</th>
                                     <th><i class="fas fa-eye"></i></th>
                                     <th><i class="fas fa-comment-alt"></i></th>
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <!-- <tr>
+                                    <tr>
                                         <td>1</td>
                                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
                                         <td>lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit</td>
@@ -102,7 +103,7 @@
                                             <a href="edit.html?id=1" class="btn btn-primary"><i class="fa fa-pen"></i></a>
                                             <a class="btn btn-danger deleteArticle"><i class="fa fa-trash"></i></a>
                                         </td>
-                                    </tr> -->
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
