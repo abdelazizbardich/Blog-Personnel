@@ -42,7 +42,16 @@
                     // calling the controller
                     return Route::controller("admin","login");
                 });
-                //
+            // verify email
+                Route::get('/api/admin/verify/{email}', function ($email) {
+
+                    return Route::controller("admin","verifyEmail");
+                });
+            // Reset password
+                Route::post('/api/admin/reset/{token}', function ($token) {
+
+                    return Route::controller("admin","resetPassword");
+                });
         // statistics
                 Route::get('/api/statistics/get',function(){
                     Route::middleware('auth');
