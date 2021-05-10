@@ -1,11 +1,12 @@
 import axios from "axios"; axios.defaults;
-import {checkPasswordValue,desAlert} from "./functions";
+import {checkPasswordValue,desAlert,getUrlParam} from "./functions";
 $(document).ready(function(){
     $("#reset").submit(function(e){
         e.preventDefault();
         $(this).find('.alert').remove();
         let password = $(this).find('input[name="password"]').val();
         let passwordconf = $(this).find('input[name="passwordconf"]').val();
+        let formData = $(this).serialize();
         $(this).find(".alert").remove();
         if(!checkPasswordValue(password)){
             $(this).find('input[name="password"]').parent(".form-group").append(`<small class="d-block alert alert-danger mt-1">le mot de pass n'est pas correct, veuillez saisir un mot de pass valide.</small>`);
@@ -18,8 +19,8 @@ $(document).ready(function(){
         }
         axios({
             method: "POST",
-            url: "http://localhost/Blog-Personnel/project/backend/api/admin/reset/"+token,
-            data: FormData,
+            url: "http://localhost/Blog-Personnel/project/backend/api/admin/reset/"+getUrlParam('token'),
+            data: formData,
             headers:{"token": window.sessionStorage.getItem('token')}
         }).then((response)=>{
             if(response.data.state == 200){
@@ -30,6 +31,10 @@ $(document).ready(function(){
                 // $(this).find('input[name="password"]').val("");
                 // $(this).find('button[type="submit"]').text("Renvoyer");
             }else{
+                console.log(response);
+                if(response.data.state == 419){
+                    desAlert("warning",response.data.msg,1500);
+                }
                 $(this).find('input[name="password"]').parent(".form-group").append(`<small class="d-block alert alert-danger mt-1">L'e-mail n'est pas correct, veuillez saisir une adresse e-mail valide.</small>`);
 
             }

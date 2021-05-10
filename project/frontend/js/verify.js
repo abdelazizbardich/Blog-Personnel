@@ -17,6 +17,7 @@ $(document).ready(function(){
                 $(this).find('input[name="email"]').val("");
                 $(this).find('button[type="submit"]').text("Renvoyer");
             }else{
+                console.log(response);
                 $(this).find('input[name="email"]').parent(".form-group").append(`<small class="d-block alert alert-danger mt-1">L'e-mail n'est pas correct, veuillez saisir une adresse e-mail valide.</small>`);
 
             }

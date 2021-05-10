@@ -54,12 +54,29 @@ class adminController extends controller{
                 $token = generateToken([
                     "id" => $admin->id,
                     "email" => $admin->email,
+                    "expire" => strtotime(date('Y-m-d H:i:s', strtotime('+5 minutes')))
                 ]);
-                $responce = [
-                    "state" => 200,
-                    "msg" => "success",
-                    "data" => []
-                ];
+                if(mail::send([
+                    "to" => $admin->email,
+                    "name"=> $admin->name,
+                    "subject" => "Password reset",
+                    "template" => "password-rest",
+                    "data" => [
+                        "token" => $token
+                    ]
+                ])){
+                    $responce = [
+                        "state" => 200,
+                        "msg" => "success",
+                        "data" => []
+                    ];
+                }else{
+                    $responce = [
+                        "state" => 500,
+                        "msg" => "Cannot send email",
+                        "data" => []
+                    ];
+                }
         }else{
             $responce = [
                 "state" => 404,
@@ -74,38 +91,52 @@ class adminController extends controller{
         if(isset($token)){
             $token = parceToken($token);
             if($token){
-                $admin = new Admin();
-                $admin = $admin->findBy("email",$token->email);
-                if($admin){
-                    $id = $admin->id;
-                    if($_POST['password'] === $_POST['passwordconf']){
-                        $admin = new Admin();
-                        if($admin->update($id,["password" => password_hash($_POST['password'],PASSWORD_DEFAULT)])){
-                            $responce = [
-                                "state" => 200,
-                                "msg" => "Password changed successfully!",
-                                "data" => []
-                            ];
+                if(strtotime(date('Y-m-d H:i:s')) < $token->expire){
+                    $admin = new Admin();
+                    $admin = $admin->findBy("email",$token->email);
+                    if($admin){
+                        $id = $admin->id;
+                        if($_POST['password'] === $_POST['passwordconf']){
+                            $admin = new Admin();
+                            if($admin->update($id,["password" => password_hash($_POST['password'],PASSWORD_DEFAULT)])){
+                                $responce = [
+                                    "state" => 200,
+                                    "msg" => "Password changed successfully!",
+                                    "data" => [
+                                        "token" => $token,
+                                        "current" => strtotime(date('Y-m-d H:i:s'))
+                                    ]
+                                ];
+                            }else{
+                                $responce = [
+                                    "state" => 500,
+                                    "msg" => "Server error!",
+                                    "data" => []
+                                ];
+                            }
                         }else{
                             $responce = [
-                                "state" => 500,
-                                "msg" => "Server error!",
+                                "state" => 403,
+                                "msg" => "Password not match!",
                                 "data" => []
                             ];
                         }
+                        
                     }else{
                         $responce = [
-                            "state" => 403,
-                            "msg" => "Password not match!",
+                            "state" => 404,
+                            "msg" => "No user found with the given email adress!",
                             "data" => []
                         ];
                     }
-                    
                 }else{
                     $responce = [
-                        "state" => 404,
-                        "msg" => "No user found with the given email adress!",
-                        "data" => []
+                        "state" => 419,
+                        "msg" => "Token expired!",
+                        "data" => [
+                            "token" => $token,
+                            "current" => strtotime(date('Y-m-d H:i:s'))
+                        ]
                     ];
                 }
             }
